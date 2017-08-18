@@ -1,0 +1,63 @@
+将列表a倒序处理，如果a＝［1，2，3］，则a［：：－1］＝［3，2，1］。前两个冒号表示处理整个列表，也可以写上参数表示处理列表的一部分，例如a［2:0:－1］=［3,2］，第一个参数表示起始点包括起始点，第二个参数表示结束点但不包括结束点。最后一个参数如果为负的话，需要保证第一个参数大于第二个参数，表示依次递减逆序，否则会输出空列表。最后一个参数为正同理。
+
+如何反序遍历一个sequence：
+简便方法：如果是一个list：
+[python] view plain copy print?
+a = [1,2,3,4,5]  
+for x in reversed(a):  
+     print x  
+  
+5,4,3,2,1  
+
+通用方法，从尾至头遍历：
+[python] view plain copy print?
+for x in range(len(a)-1,-1,-1):  
+    print a[x]  
+5,4,3,2,1  
+
+解释：len(a)是5，所以range的表达式实际上是range(4,-1,-1)。即[4,-1),步长是-1,也就是说4是开始并包含在里面，然后-1是3，然后是2，然后是1，然后是0，-1师结尾，但不包含。所以输出是a[4],a[3],a[2],a[1],a[0],这样就做到了从尾到头便利list。
+
+所以，有三种方法来倒序遍历一个List：
+1 . for x in reversed(array):
+           print x
+2. for x in range(len(array)-1,-1,-1):
+           print array[x]
+3. for x in array[::-1]:
+           print x
+		   
+		   
+		   
+		   
+
+String模块ascii_letters和digits
+
+
+
+GitHub中删除文件
+1.在你的本地目录下手动删除你要删除的东西
+2.在客户端输入：git commit -a -m "A file was deleted"
+3.在客户端：git push
+
+
+def genMatrix(rows,cols):  
+    matrix = [[0 for col in range(cols)] for row in range(rows)]  
+    for i in range(rows):  
+        for j in range(cols):  
+            print matrix[i][j],  
+        print '\n' 
+		
+		
+python 定义一个二维数组并初始化
+#coding=utf-8
+import numpy as np
+image =[[0 for col in range(5)] for row in range(3)]
+a = np.array(image)
+
+#第一种方法 是先生成一个list 再转换成数组 ；0 是 数组初始化的值  ；数组较大 时候 效率较慢。
+
+new_image =np.zeros((3,5))
+#第二种方法是直接定义一个数组 数组的值默认是0，效率较高。
+print  'image=',image
+print a
+print new_image.shape,a.shape
+
