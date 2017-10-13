@@ -1,12 +1,12 @@
 将列表a倒序处理，如果a＝［1，2，3］，则a［：：－1］＝［3，2，1］。前两个冒号表示处理整个列表，也可以写上参数表示处理列表的一部分，例如a［2:0:－1］=［3,2］，第一个参数表示起始点包括起始点，第二个参数表示结束点但不包括结束点。最后一个参数如果为负的话，需要保证第一个参数大于第二个参数，表示依次递减逆序，否则会输出空列表。最后一个参数为正同理。
 
+
 如何反序遍历一个sequence：
 简便方法：如果是一个list：
 [python] view plain copy print?
 a = [1,2,3,4,5]  
 for x in reversed(a):  
      print x  
-  
 5,4,3,2,1  
 
 通用方法，从尾至头遍历：
@@ -48,16 +48,36 @@ def genMatrix(rows,cols):
 		
 		
 python 定义一个二维数组并初始化
-#coding=utf-8
 import numpy as np
+#第一种方法 是先生成一个list 再转换成数组 ；0 是 数组初始化的值  ；数组较大 时候 效率较慢。
 image =[[0 for col in range(5)] for row in range(3)]
 a = np.array(image)
-
-#第一种方法 是先生成一个list 再转换成数组 ；0 是 数组初始化的值  ；数组较大 时候 效率较慢。
-
-new_image =np.zeros((3,5))
 #第二种方法是直接定义一个数组 数组的值默认是0，效率较高。
+new_image =np.zeros((3,5))
+
 print  'image=',image
 print a
 print new_image.shape,a.shape
+
+
+
+python 判断字符串是否包含子字符串
+2017-03-09 11:09 by 丨o聽乄雨o丨, 11254 阅读, 1 评论, 收藏, 编辑
+第一种方法：in
+string = 'helloworld'
+if 'world' in string:
+　　print 'Exist'
+else:
+　　print 'Not exist'
+第二种方法：find
+string = 'helloworld'
+if string.find(’world‘) == 5: #5的意思是world字符从那个序开始，因为w位于第六个，及序为5，所以判断5
+　　print 'Exist'
+else:
+　　print 'Not exist'
+第三种方法：index，此方法与find作用类似，也是找到字符起始的序号
+if string.index(’world‘) > -1: #因为-1的意思代表没有找到字符，所以判断>-1就代表能找到
+　　print 'Exist'
+else:
+　　print 'Not exist'
 
