@@ -62,7 +62,7 @@ print new_image.shape,a.shape
 
 
 python ÅĞ¶Ï×Ö·û´®ÊÇ·ñ°üº¬×Ó×Ö·û´®
-2017-03-09 11:09 by Ø­oÂ WÓêoØ­, 11254 ÔÄ¶Á, 1 ÆÀÂÛ, ÊÕ²Ø, ±à¼­
+
 µÚÒ»ÖÖ·½·¨£ºin
 string = 'helloworld'
 if 'world' in string:
@@ -81,3 +81,44 @@ if string.index(¡¯world¡®) > -1: #ÒòÎª-1µÄÒâË¼´ú±íÃ»ÓĞÕÒµ½×Ö·û£¬ËùÒÔÅĞ¶Ï>-1¾Í´ú±
 else:
 ¡¡¡¡print 'Not exist'
 
+
+
+
+
+PythonÖĞµÄrandomÄ£¿éÓÃÓÚÉú³ÉËæ»úÊı
+
+random.random
+random.random()ÓÃÓÚÉú³ÉÒ»¸ö0µ½1µÄËæ»ú·ûµãÊı: 0 <= n < 1.0
+
+random.uniform
+random.uniformµÄº¯ÊıÔ­ĞÍÎª£ºrandom.uniform(a, b)£¬ÓÃÓÚÉú³ÉÒ»¸öÖ¸¶¨·¶Î§ÄÚµÄËæ»ú·ûµãÊı£¬Á½¸ö²ÎÊıÆäÖĞÒ»¸öÊÇÉÏÏŞ£¬Ò»¸öÊÇÏÂÏŞ¡£Èç¹ûa > b£¬ÔòÉú³ÉµÄËæ»úÊın: a <= n <= b¡£Èç¹û a <b£¬ Ôò b <= n <= a¡£
+
+print random.uniform(10, 20)  
+print random.uniform(20, 10)  
+#---- ½á¹û£¨²»Í¬»úÆ÷ÉÏµÄ½á¹û²»Ò»Ñù£©  
+#18.7356606526  
+#12.5798298022  
+
+random.randint
+random.randint()µÄº¯ÊıÔ­ĞÍÎª£ºrandom.randint(a, b)£¬ÓÃÓÚÉú³ÉÒ»¸öÖ¸¶¨·¶Î§ÄÚµÄÕûÊı¡£ÆäÖĞ²ÎÊıaÊÇÏÂÏŞ£¬²ÎÊıbÊÇÉÏÏŞ£¬Éú³ÉµÄËæ»úÊın: a <= n <= b
+print random.randint(12, 20)  #Éú³ÉµÄËæ»úÊın: 12 <= n <= 20  
+
+random.randrange
+random.randrangeµÄº¯ÊıÔ­ĞÍÎª£ºrandom.randrange([start], stop[, step])£¬´ÓÖ¸¶¨·¶Î§ÄÚ£¬°´Ö¸¶¨»ùÊıµİÔöµÄ¼¯ºÏÖĞ »ñÈ¡Ò»¸öËæ»úÊı¡£Èç£ºrandom.randrange(10, 100, 2)£¬½á¹ûÏàµ±ÓÚ´Ó[10, 12, 14, 16, ... 96, 98]ĞòÁĞÖĞ»ñÈ¡Ò»¸öËæ»úÊı¡£random.randrange(10, 100, 2)ÔÚ½á¹ûÉÏÓë random.choice(range(10, 100, 2) µÈĞ§¡£
+
+random.choice
+random.choice´ÓĞòÁĞÖĞ»ñÈ¡Ò»¸öËæ»úÔªËØ¡£Æäº¯ÊıÔ­ĞÍÎª£ºrandom.choice(sequence)¡£²ÎÊısequence±íÊ¾Ò»¸öÓĞĞòÀàĞÍ¡£ÕâÀïÒªËµÃ÷Ò»ÏÂ£ºsequenceÔÚpython²»ÊÇÒ»ÖÖÌØ¶¨µÄÀàĞÍ£¬¶øÊÇ·ºÖ¸Ò»ÏµÁĞµÄÀàĞÍ¡£list, tuple, ×Ö·û´®¶¼ÊôÓÚsequence¡£ÓĞ¹Øsequence¿ÉÒÔ²é¿´pythonÊÖ²áÊı¾İÄ£ĞÍÕâÒ»ÕÂ¡£ÏÂÃæÊÇÊ¹ÓÃchoiceµÄÒ»Ğ©Àı×Ó£º
+print random.choice(["JGood", "is", "a", "handsome", "boy"])  
+
+random.shuffle
+random.shuffleµÄº¯ÊıÔ­ĞÍÎª£ºrandom.shuffle(x[, random])£¬ÓÃÓÚ½«Ò»¸öÁĞ±íÖĞµÄÔªËØ´òÂÒ¡£Èç:
+p = ["Python", "is", "powerful", "simple", "and so on..."]  
+random.shuffle(p)  
+print p  
+#---- ½á¹û£¨²»Í¬»úÆ÷ÉÏµÄ½á¹û¿ÉÄÜ²»Ò»Ñù¡££©  
+#['powerful', 'simple', 'is', 'Python', 'and so on...']  
+
+random.sample
+random.sampleµÄº¯ÊıÔ­ĞÍÎª£ºrandom.sample(sequence, k)£¬´ÓÖ¸¶¨ĞòÁĞÖĞËæ»ú»ñÈ¡Ö¸¶¨³¤¶ÈµÄÆ¬¶Ï¡£sampleº¯Êı²»»áĞŞ¸ÄÔ­ÓĞĞòÁĞ¡£
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  
+slice = random.sample(list, 5)  #´ÓlistÖĞËæ»ú»ñÈ¡5¸öÔªËØ£¬×÷ÎªÒ»¸öÆ¬¶Ï·µ»Ø  
