@@ -14,3 +14,5 @@ def quadratic(a,b,c):
         x2 = (-b-math.sqrt(dt))/(2*a)
         print('x1 =',x1,'\nx2 =',x2)
     return
+
+quadratic(3,-4,-31)

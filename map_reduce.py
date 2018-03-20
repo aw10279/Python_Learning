@@ -2,6 +2,8 @@
 
 from functools import reduce
 
+#map最后得到一个列表，reduce得到一个数，但在实际使用之前本身都只是一个迭代器。它们后面跟的参数也都必须是迭代器。
+
 def str2float(s):
 
     index = s.find('.')         #用string的find和replace属性确定除以的倍数，并去掉小数点。
